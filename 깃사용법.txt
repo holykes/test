@@ -1,0 +1,24 @@
+# 깃 사용시 pull을 먼저 해야 나중에 깃허브 repository와 완변하게 sync가능.
+ 만약 push부터하면 push만 가능하다.
+
+### 로컬 폴더와 깃허브 레파지토리 연결하기 ###
+0.연결할 로컬 폴더 만들기
+1.폴더에서 우클릭->Git bash here
+2.git init 입력하면 폴더에 .git이 생긴다
+3.폴더와 깃허브를 연결해야 한다
+4.git remote add origin 레파지토리 주소
+  아무말도 안나오면 성공!!!
+5.git pull origin master
+  그런데 이런 오류가 발생하면 깃허브에서 기본 생성 branch 이름이 달라서이다.
+      "fatal: couldn't find remote ref master"
+
+  해결법:1)깃허브에서 main 옆 "branch"클릭
+          (Default branch 이름이 main으로 되어 있다.)
+       2)연필 아이콘 클릭
+       3)팝업창에 master 입력후 Rename branch 클릭
+
+### 로컬 자료를 깃허브 레파지토리에 push ###
+1.git add .
+  "."은 로컬 폴더 전체를 sync하겠다는 뜻
+2.git commit -m "메시지"
+3.git push origin master
